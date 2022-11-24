@@ -1,0 +1,35 @@
+.auth {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  img {
+    width: 120px;
+    display: block;
+    margin: auto;
+  }
+
+  h1 {
+    color: $prim;
+    text-align: center;
+    font-size: 2.6rem;
+    margin: 0.8rem 0;
+  }
+
+  button {
+    background-color: $prim;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    vertical-align: middle;
+
+    span {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+  }
+}
