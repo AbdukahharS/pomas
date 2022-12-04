@@ -1,17 +1,38 @@
 import { useContext } from 'react'
 import { Navigate } from 'react-router-dom'
-import { auth, provider } from '../config/firebase'
+import { auth, provider, firestore } from '../config/firebase'
 import { AuthContext } from '../context/AuthContext'
+import { ProfileContext } from '../context/ProfileContext'
 import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
+import { getDoc, doc, setDoc } from 'firebase/firestore'
 import Logo from '../images/logo.png'
 
 const Auth = () => {
   const { currentUser } = useContext(AuthContext)
+  const { dispatch } = useContext(ProfileContext)
 
   const signIn = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         GoogleAuthProvider.credentialFromResult(result)
+      })
+      .then(() => {
+        getDoc(doc(firestore, `profiles`, currentUser.uid))
+          .then((snap) => {
+            if (snap.exists()) {
+              dispatch({
+                type: 'SET_PROFILE',
+                payload: { id: snap.id, ...snap.data() },
+              })
+            } else {
+              setDoc(doc(firestore, `profiles`, currentUser.uid), {
+                name: currentUser.displayName,
+              })
+            }
+          })
+          .catch((err) => {
+            console.error(err)
+          })
       })
       .catch((error) => {
         GoogleAuthProvider.credentialFromError(error)

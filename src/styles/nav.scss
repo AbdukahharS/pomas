@@ -1,0 +1,37 @@
+nav {
+  background: $prim;
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 5px 0;
+
+    .logo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 14px;
+
+      img {
+        width: 80px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+
+    .details {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+}
