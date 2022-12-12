@@ -1,7 +1,41 @@
 .container {
   width: 100%;
-  max-width: 1080px;
+  max-width: 1280px;
   margin: 0 auto;
+}
+
+main {
+  padding: 1.6rem 0;
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.6rem;
+
+    aside {
+      background: $prim;
+      color: #fff;
+      padding: 1rem 1.4rem;
+      border-radius: 10px;
+      min-width: 250px;
+    }
+
+    section {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      flex: 1;
+
+      article {
+        width: 100%;
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
+      }
+    }
+  }
 }
 
 @import 'nav';

@@ -1,6 +1,7 @@
 $prim: #ff4444;
 $primDark: #e52121;
 $second: #21e521;
+$dim: #f4f7fd;
 
 * {
   box-sizing: border-box;
@@ -9,7 +10,9 @@ $second: #21e521;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+  background: $dim;
+  color: #414141;
 }
 
 a {
