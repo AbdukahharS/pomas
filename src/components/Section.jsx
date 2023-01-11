@@ -1,6 +1,14 @@
-import React from 'react'
+import { MdDeleteOutline } from 'react-icons/md'
 
 const Section = () => {
+  const handleDelete = (id) => {
+    if (
+      window.confirm(
+        `This operation will delete the task with id ${id} permanently.`
+      ) === true
+    ) {
+    }
+  }
   return (
     <section>
       <article>
@@ -14,6 +22,11 @@ const Section = () => {
             <div>
               <input type='checkbox' />
             </div>
+            <div className='btn-cont'>
+              <button onClick={() => handleDelete(1)}>
+                <MdDeleteOutline />
+              </button>
+            </div>
           </div>
           <div className='row done'>
             <div>2</div>
@@ -23,6 +36,11 @@ const Section = () => {
             <div>
               <input type='checkbox' checked readOnly />
             </div>
+            <div className='btn-cont'>
+              <button>
+                <MdDeleteOutline />
+              </button>
+            </div>
           </div>
           <div className='row done'>
             <div>3</div>
@@ -31,6 +49,11 @@ const Section = () => {
             <div>10 pm</div>
             <div>
               <input type='checkbox' checked readOnly />
+            </div>
+            <div className='btn-cont'>
+              <button>
+                <MdDeleteOutline />
+              </button>
             </div>
           </div>
         </div>

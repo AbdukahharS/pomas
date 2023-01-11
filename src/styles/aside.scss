@@ -1,0 +1,18 @@
+aside {
+  background: $prim;
+  color: #fff;
+  padding: 1rem 1.4rem;
+  border-radius: 10px;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  button {
+    background: #fff;
+    padding: 7px;
+    color: $prim;
+    font-size: 1.2rem;
+    border-radius: 5px;
+  }
+}

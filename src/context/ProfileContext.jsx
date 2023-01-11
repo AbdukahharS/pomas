@@ -4,17 +4,22 @@ export const ProfileContext = createContext()
 
 export const ProfileReducer = (state, action) => {
   switch (action.type) {
-    case 'SET_PPROFILE':
-      return action.payload
+    case 'SET_PROFILE':
+      return { profile: action.payload, taskList: state.taskList }
+    case 'SET_TASK_LIST':
+      return { profile: state.profile, taskList: action.payload }
     case 'REMOVE_PROFILE':
-      return null
+      return { profile: null, taskList: null }
     default:
       return state
   }
 }
 
 export const ProfileContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(ProfileReducer, null)
+  const [state, dispatch] = useReducer(ProfileReducer, {
+    profile: null,
+    taskList: [],
+  })
 
   return (
     <ProfileContext.Provider value={{ ...state, dispatch }}>
