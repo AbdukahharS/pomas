@@ -56,7 +56,7 @@ main {
         margin-bottom: 5px;
       }
 
-      input,
+      input:not([type='checkbox']),
       select {
         margin-bottom: 20px;
         border: none;
@@ -74,15 +74,15 @@ main {
         color: #414141;
         width: 100%;
 
-        &[type='checkbox'] {
-          cursor: pointer;
-          margin: 0 5px 15px 15px;
-        }
-
         &:focus {
           background: #fff;
           border-color: $prim;
         }
+      }
+
+      input[type='checkbox'] {
+        cursor: pointer;
+        margin: 0 5px 15px 15px;
       }
 
       button {

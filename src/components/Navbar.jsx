@@ -1,7 +1,10 @@
-import React from 'react'
+import { useContext } from 'react'
+import { ProfileContext } from '../context/ProfileContext'
 import Logo from '../images/logo.png'
 
 const Navbar = () => {
+  const { profile } = useContext(ProfileContext)
+
   return (
     <nav>
       <div className='container'>
@@ -10,7 +13,7 @@ const Navbar = () => {
           <h1>Pomas</h1>
         </div>
         <div className='details'>
-          <p>Shakhzodbek</p>
+          <p>{profile && profile.name}</p>
           <span>28.11.2022</span>
         </div>
       </div>
